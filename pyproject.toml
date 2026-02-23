@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "aicog-v2"
 version = "0.1.0"
 authors = [
-  { name="Your Name", email="your.email@example.com" },
+  { name="Ranganthan J", email="ranganathanj1730@gmail.com" },
 ]
 description = "A production-ready AI Gateway SDK with multi-provider support, Redis caching, and persistent request logging."
 readme = "README.md"
