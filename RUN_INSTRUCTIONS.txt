@@ -1,0 +1,42 @@
+========== AiCog V2 Setup & Execution Guide ==========
+
+1. ENVIRONMENT SETUP
+--------------------
+Navigate to the project root and install the required dependencies:
+> cd c:\Users\Ranganathan.9703\Documents\python_sdk\aicog_library_v2
+> pip install -r requirements.txt
+
+2. START REDIS (The Caching Layer)
+--------------------
+Open a NEW terminal window and run the Redis server:
+> cd c:\Users\Ranganathan.9703\Documents\python_sdk\aicog_library_v2\Redis-x64-5.0.14.1
+> .\redis-server.exe redis.windows.conf
+
+(Keep this terminal open while running your scripts)
+
+3. CONFIGURE API KEYS
+--------------------
+Ensure your .env file in the root or your environment variables are set:
+> $env:GROQ_API_KEY="your_api_key_here"
+
+4. RUN THE PRODUCTION DEMO
+--------------------
+Once Redis is running, execute the V2 demo script:
+> cd c:\Users\Ranganathan.9703\Documents\python_sdk\aicog_library_v2
+> python example_v2.py
+
+5. MONITORING & AUDITING
+--------------------
+- Every request is logged to: aicog_audit_v2.db (SQLite)
+- Cache hits/misses are handled by the Redis server you started in Step 2.
+- Dashboard (Future): You can query the .db file to see latency and token usage.
+
+=======================================================
+
+6. When you are finally ready to share this with the world on PyPI, you simply run:
+-----------------------------
+
+pip install build twine
+python -m build
+python -m twine upload dist/*
+=======================================================
